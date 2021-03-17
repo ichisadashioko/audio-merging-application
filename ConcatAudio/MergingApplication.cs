@@ -13,14 +13,16 @@ namespace ConcatAudio
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int size = 1;
-            var fileDialog = new OpenFileDialog();
-            if (fileDialog.ShowDialog() == DialogResult.OK)
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
             {
-                string fileToOpen = fileDialog.FileName;
-                audioFileEntriesListBox.Items.Add(fileToOpen);
+                openFileDialog.RestoreDirectory = true;
+                openFileDialog.Filter = "Audio files(*.MP3;*.WAV)|*.MP3,;*.WAV";
 
-                //FileInfo selectedFile = new FileInfo(fileToOpen);
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    var filePath = openFileDialog.FileName;
+                    audioFileEntriesListBox.Items.Add(filePath);
+                }
             }
         }
     }
