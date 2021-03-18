@@ -4,14 +4,6 @@ using System.IO;
 
 namespace ConcatAudio
 {
-    public class AudioFileEntries
-    {
-        public string FilePath { get; set; }
-        public override string ToString()
-        {
-            return this.FilePath.Substring(this.FilePath.LastIndexOf('\\') + 1);
-        }
-    }
     public partial class MergingApplication : Form
     {
         public MergingApplication()
@@ -36,6 +28,15 @@ namespace ConcatAudio
                     }
                 }
             }
+        }
+    }
+
+    public class AudioFileEntries
+    {
+        public string FilePath { get; set; }
+        public override string ToString()
+        {
+            return this.FilePath.Substring(this.FilePath.LastIndexOf('\\') + 1);
         }
     }
 }
