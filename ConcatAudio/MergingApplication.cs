@@ -4,6 +4,14 @@ using System.IO;
 
 namespace ConcatAudio
 {
+    public class AudioFileEntries
+    {
+        public string FilePath { get; set; }
+        public override string ToString()
+        {
+            return this.FilePath.Substring(this.FilePath.LastIndexOf('\\') + 1);
+        }
+    }
     public partial class MergingApplication : Form
     {
         public MergingApplication()
@@ -21,7 +29,8 @@ namespace ConcatAudio
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     var filePath = openFileDialog.FileName;
-                    audioFileEntriesListBox.Items.Add(filePath);
+                    var filePathObj = new AudioFileEntries() { FilePath = filePath };
+                    audioFileEntriesListBox.Items.Add(filePathObj);
                 }
             }
         }
