@@ -25,12 +25,15 @@ namespace ConcatAudio
             {
                 openFileDialog.RestoreDirectory = true;
                 openFileDialog.Filter = "Audio files(*.MP3;*.WAV)|*.MP3,;*.WAV";
+                openFileDialog.Multiselect = true;
 
                 if (openFileDialog.ShowDialog() == DialogResult.OK)
                 {
-                    var filePath = openFileDialog.FileName;
-                    var filePathObj = new AudioFileEntries() { FilePath = filePath };
-                    audioFileEntriesListBox.Items.Add(filePathObj);
+                    foreach (var filePath in openFileDialog.FileNames)
+                    {
+                        var filePathObj = new AudioFileEntries() { FilePath = filePath };
+                        audioFileEntriesListBox.Items.Add(filePathObj);
+                    }
                 }
             }
         }
