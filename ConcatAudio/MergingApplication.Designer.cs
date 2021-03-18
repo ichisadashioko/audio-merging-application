@@ -1,4 +1,3 @@
-﻿
 namespace ConcatAudio
 {
     partial class MergingApplication
@@ -32,9 +31,9 @@ namespace ConcatAudio
             this.button1 = new System.Windows.Forms.Button();
             this.audioFileEntriesListBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
-            // 
+            //
             // button1
-            // 
+            //
             this.button1.Location = new System.Drawing.Point(13, 13);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(160, 48);
@@ -42,17 +41,17 @@ namespace ConcatAudio
             this.button1.Text = "Browser source file";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
+            //
             // audioFileEntriesListBox
-            // 
+            //
             this.audioFileEntriesListBox.FormattingEnabled = true;
             this.audioFileEntriesListBox.Location = new System.Drawing.Point(13, 68);
             this.audioFileEntriesListBox.Name = "audioFileEntriesListBox";
             this.audioFileEntriesListBox.Size = new System.Drawing.Size(160, 368);
             this.audioFileEntriesListBox.TabIndex = 1;
-            // 
+            //
             // MergingApplication
-            // 
+            //
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
@@ -70,4 +69,3 @@ namespace ConcatAudio
         private System.Windows.Forms.ListBox audioFileEntriesListBox;
     }
 }
-
