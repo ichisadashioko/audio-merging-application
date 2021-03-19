@@ -29,6 +29,11 @@ namespace ConcatAudio
                 }
             }
         }
+
+        private void finishButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 
     public class AudioFileEntries

@@ -37,11 +37,11 @@ namespace ConcatAudio
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.mp3FormatRadioButton = new System.Windows.Forms.RadioButton();
+            this.wavFormatRadioButton = new System.Windows.Forms.RadioButton();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.startCancelButton = new System.Windows.Forms.Button();
+            this.finishButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -76,7 +76,7 @@ namespace ConcatAudio
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(364, 43);
+            this.label2.Location = new System.Drawing.Point(364, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(88, 13);
             this.label2.TabIndex = 3;
@@ -91,7 +91,7 @@ namespace ConcatAudio
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(488, 40);
+            this.textBox2.Location = new System.Drawing.Point(488, 56);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(299, 20);
             this.textBox2.TabIndex = 5;
@@ -99,7 +99,7 @@ namespace ConcatAudio
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(364, 70);
+            this.label3.Location = new System.Drawing.Point(364, 109);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(73, 13);
             this.label3.TabIndex = 6;
@@ -108,7 +108,7 @@ namespace ConcatAudio
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(364, 97);
+            this.label4.Location = new System.Drawing.Point(365, 333);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 13);
             this.label4.TabIndex = 7;
@@ -116,70 +116,71 @@ namespace ConcatAudio
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(367, 125);
+            this.progressBar1.Location = new System.Drawing.Point(368, 366);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(420, 23);
             this.progressBar1.TabIndex = 8;
             // 
-            // radioButton1
+            // mp3FormatRadioButton
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(488, 68);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(47, 17);
-            this.radioButton1.TabIndex = 9;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "MP3";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.mp3FormatRadioButton.AutoSize = true;
+            this.mp3FormatRadioButton.Location = new System.Drawing.Point(488, 107);
+            this.mp3FormatRadioButton.Name = "mp3FormatRadioButton";
+            this.mp3FormatRadioButton.Size = new System.Drawing.Size(47, 17);
+            this.mp3FormatRadioButton.TabIndex = 9;
+            this.mp3FormatRadioButton.TabStop = true;
+            this.mp3FormatRadioButton.Text = "MP3";
+            this.mp3FormatRadioButton.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // wavFormatRadioButton
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(736, 68);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(50, 17);
-            this.radioButton2.TabIndex = 10;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "WAV";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.wavFormatRadioButton.AutoSize = true;
+            this.wavFormatRadioButton.Location = new System.Drawing.Point(737, 107);
+            this.wavFormatRadioButton.Name = "wavFormatRadioButton";
+            this.wavFormatRadioButton.Size = new System.Drawing.Size(50, 17);
+            this.wavFormatRadioButton.TabIndex = 10;
+            this.wavFormatRadioButton.TabStop = true;
+            this.wavFormatRadioButton.Text = "WAV";
+            this.wavFormatRadioButton.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(367, 165);
+            this.button2.Location = new System.Drawing.Point(367, 413);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 11;
             this.button2.Text = "Play Test";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // startCancelButton
             // 
-            this.button3.Location = new System.Drawing.Point(547, 165);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 12;
-            this.button3.Text = "Cancel";
-            this.button3.UseVisualStyleBackColor = true;
+            this.startCancelButton.Location = new System.Drawing.Point(538, 413);
+            this.startCancelButton.Name = "startCancelButton";
+            this.startCancelButton.Size = new System.Drawing.Size(75, 23);
+            this.startCancelButton.TabIndex = 12;
+            this.startCancelButton.Text = "Start";
+            this.startCancelButton.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // finishButton
             // 
-            this.button4.Location = new System.Drawing.Point(711, 165);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "Finish";
-            this.button4.UseVisualStyleBackColor = true;
+            this.finishButton.Location = new System.Drawing.Point(713, 413);
+            this.finishButton.Name = "finishButton";
+            this.finishButton.Size = new System.Drawing.Size(75, 23);
+            this.finishButton.TabIndex = 13;
+            this.finishButton.Text = "Finish";
+            this.finishButton.UseVisualStyleBackColor = true;
+            this.finishButton.Click += new System.EventHandler(this.finishButton_Click);
             // 
             // MergingApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.finishButton);
+            this.Controls.Add(this.startCancelButton);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.wavFormatRadioButton);
+            this.Controls.Add(this.mp3FormatRadioButton);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -207,10 +208,10 @@ namespace ConcatAudio
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton mp3FormatRadioButton;
+        private System.Windows.Forms.RadioButton wavFormatRadioButton;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button startCancelButton;
+        private System.Windows.Forms.Button finishButton;
     }
 }
