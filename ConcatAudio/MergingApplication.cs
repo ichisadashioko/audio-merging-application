@@ -34,6 +34,15 @@ namespace ConcatAudio
         {
             this.Close();
         }
+
+        private void startCancelButton_Click(object sender, EventArgs e)
+        {
+            // TODO check for target format
+
+            // If they are all the same with the input files, continue.
+
+            // If they are not, convert them to the target format
+        }
     }
 
     public class AudioFileEntries
