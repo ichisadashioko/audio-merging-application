@@ -6,9 +6,53 @@ namespace ConcatAudio
 {
     public partial class MergingApplication : Form
     {
+        bool IsLoadingSettings { get; set; }
+
         public MergingApplication()
         {
             InitializeComponent();
+            IsLoadingSettings = true;
+
+            if (string.IsNullOrWhiteSpace(Properties.Settings.Default.TargetDirectory))
+            {
+                targetLocationTB.Text = Properties.Settings.Default.TargetDirectory;
+            }
+
+            if (string.IsNullOrWhiteSpace(Properties.Settings.Default.TargetFileName))
+            {
+                targetFileNameTB.Text = Properties.Settings.Default.TargetFileName;
+            }
+
+            if (Properties.Settings.Default.ExportFormat.Equals("mp3", StringComparison.InvariantCultureIgnoreCase))
+            {
+                mp3FormatRadioButton.Checked = true;
+            }
+            else
+            {
+                wavFormatRadioButton.Checked = true;
+            }
+
+            IsLoadingSettings = false;
+        }
+
+        private void UpdateSettings(object sender, EventArgs e)
+        {
+            if (IsLoadingSettings)
+            {
+                return;
+            }
+
+            if (!targetLocationTB.Text.Equals(Properties.Settings.Default.TargetDirectory))
+            {
+                Properties.Settings.Default.TargetDirectory = targetLocationTB.Text;
+            }
+
+            if (!targetFileNameTB.Text.Equals(Properties.Settings.Default.TargetFileName))
+            {
+                Properties.Settings.Default.TargetFileName = targetFileNameTB.Text;
+            }
+
+            Properties.Settings.Default.Save();
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -32,8 +32,8 @@ namespace ConcatAudio
             this.audioFileEntriesListBox = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.targetLocationTB = new System.Windows.Forms.TextBox();
+            this.targetFileNameTB = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
@@ -82,19 +82,21 @@ namespace ConcatAudio
             this.label2.TabIndex = 3;
             this.label2.Text = "Target File Name";
             //
-            // textBox1
+            // targetLocationTB
             //
-            this.textBox1.Location = new System.Drawing.Point(488, 13);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(300, 20);
-            this.textBox1.TabIndex = 4;
+            this.targetLocationTB.Location = new System.Drawing.Point(488, 13);
+            this.targetLocationTB.Name = "targetLocationTB";
+            this.targetLocationTB.Size = new System.Drawing.Size(300, 20);
+            this.targetLocationTB.TabIndex = 4;
+            this.targetLocationTB.TextChanged += new System.EventHandler(this.UpdateSettings);
             //
-            // textBox2
+            // targetFileNameTB
             //
-            this.textBox2.Location = new System.Drawing.Point(488, 56);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(299, 20);
-            this.textBox2.TabIndex = 5;
+            this.targetFileNameTB.Location = new System.Drawing.Point(488, 56);
+            this.targetFileNameTB.Name = "targetFileNameTB";
+            this.targetFileNameTB.Size = new System.Drawing.Size(299, 20);
+            this.targetFileNameTB.TabIndex = 5;
+            this.targetFileNameTB.TextChanged += new System.EventHandler(this.UpdateSettings);
             //
             // label3
             //
@@ -131,6 +133,7 @@ namespace ConcatAudio
             this.mp3FormatRadioButton.TabStop = true;
             this.mp3FormatRadioButton.Text = "MP3";
             this.mp3FormatRadioButton.UseVisualStyleBackColor = true;
+            this.mp3FormatRadioButton.TextChanged += new System.EventHandler(this.UpdateSettings);
             //
             // wavFormatRadioButton
             //
@@ -142,6 +145,7 @@ namespace ConcatAudio
             this.wavFormatRadioButton.TabStop = true;
             this.wavFormatRadioButton.Text = "WAV";
             this.wavFormatRadioButton.UseVisualStyleBackColor = true;
+            this.wavFormatRadioButton.TextChanged += new System.EventHandler(this.UpdateSettings);
             //
             // button2
             //
@@ -185,8 +189,8 @@ namespace ConcatAudio
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.targetFileNameTB);
+            this.Controls.Add(this.targetLocationTB);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.audioFileEntriesListBox);
@@ -204,8 +208,8 @@ namespace ConcatAudio
         private System.Windows.Forms.ListBox audioFileEntriesListBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox targetLocationTB;
+        private System.Windows.Forms.TextBox targetFileNameTB;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ProgressBar progressBar1;
